@@ -1,0 +1,25 @@
+name: Release
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  linux:
+    uses: ./.github/workflows/release-action.yml
+    with:
+      runs_on: ubuntu-latest
+      configfile: .goreleaser-linux.yml
+
+  darwin:
+    uses: ./.github/workflows/release-action.yml
+    with:
+      runs_on: macos-latest
+      configfile: .goreleaser-darwin.yml
+
+  windows:
+    uses: ./.github/workflows/release-action.yml
+    with:
+      runs_on: windows-latest
+      configfile: .goreleaser-windows.yml

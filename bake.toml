@@ -1,0 +1,6 @@
+# Ref: https://stackoverflow.com/questions/13758877/how-do-i-find-out-what-inotify-watches-have-been-registered
+[download_inotify-consumers]
+commands = [
+  ["wget", "https://raw.githubusercontent.com/fatso83/dotfiles/master/utils/scripts/inotify-consumers"],
+  ["chmod", "755", "inotify-consumers"],
+]
