@@ -93,8 +93,8 @@ func setUpCommand(stdout io.Writer) error {
 	}
 
 	example := `[[actions]]
-files = ["go.mod"]
-command = "echo go.mod changed'"
+files = "go.mod"
+commands = ["echo go.mod changed'"]
 `
 
 	if err := os.WriteFile(filename, []byte(example), 0644); err != nil {

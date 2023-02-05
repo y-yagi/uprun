@@ -25,7 +25,7 @@ type Config struct {
 
 type Action struct {
 	Commands []string
-	Files    []string
+	File     string
 }
 
 type Event struct {
@@ -127,9 +127,7 @@ func (r *Runner) parseConfig(filename string) error {
 	}
 
 	for m, action := range r.cfg.Actions {
-		for _, file := range action.Files {
-			r.actions[file] = &r.cfg.Actions[m]
-		}
+		r.actions[action.File] = &r.cfg.Actions[m]
 	}
 
 	return nil
